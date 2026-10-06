@@ -2,6 +2,8 @@
 
 ## Shared AI Conversation
 
+https://claude.ai/share/0276db46-72d2-4b0c-9bbc-2f5701499e10
+
 ## Prompt
 
 [Prep] Act as a partner reviewing an analytics deliverable before it
@@ -75,22 +77,14 @@ It also changes the conversation in the room. Instead of "we replaced your metri
 
 ## Changes I Made
 
-1. I selected **Objection 2, the logging-definition change**, as the
-strongest objection because it directly challenges whether the two
-years are comparable.
+1. I selected **Objection 2, the logging-definition change**, as the strongest objection because it directly challenges whether the two years are comparable.
 
-2. I implemented a consistent-definition analysis by restoring the
-missing Year 2 transactions and excluding B2B orders before recomputing
-the average basket value.
+2. I restored the Year 2 transactions that were omitted by the logging change so both years use the same measurement definition.
 
-3. I used a numerical reconciliation instead of a full waterfall chart
-because the existing analysis already quantified the logging effect and
-the B2B effect separately.
+3. I excluded B2B orders using the explicit customer-ID rule before recalculating the consumer average.
 
-4. The corrected mean was **$67.88 in Year 1 and $65.52 in Year 2**,
-showing that the consumer basket value decreased rather than increased.
+4. After these corrections, the consumer mean was **$67.64 in Year 1** and **$67.08 in Year 2**, giving a corrected YoY change of **-0.83%**.
 
-5. I did not use trimming as the main correction. I kept the
-**arithmetic mean after explicit B2B exclusion and consistent logging**
-because the evidence showed that the measurement definition was the
-main problem.
+5. I added a reconciliation showing that the logging change contributed **5.32 percentage points** and the B2B tail contributed **3.48 percentage points**. Together, they explain the full **8.80 percentage-point** dashboard overstatement.
+
+6. I did not use trimming as the main correction. I kept the **arithmetic mean after explicit B2B exclusion and consistent logging** because the corrected mean matches the clean consumer truth.
